@@ -1,5 +1,5 @@
 FROM node:9.2.0-slim
-ENV INSTALL_PATH /pontoclient
+ENV INSTALL_PATH /ponto-client
 RUN npm install -g @angular/cli
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
