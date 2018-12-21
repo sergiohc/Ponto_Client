@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UsersModule } from './users/users.module';
 import { HttpModule } from '@angular/http';
 import { Angular2TokenService } from 'angular2-token';
 
 @NgModule({
   declarations: [
+    AppComponent,
     HomeComponent,
     HeaderComponent,
     NotFoundComponent
@@ -22,7 +24,8 @@ import { Angular2TokenService } from 'angular2-token';
     MaterializeModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule,
-    routing
+    routing,
+    UsersModule
   ],
   providers: [Angular2TokenService],
   bootstrap: [AppComponent]
