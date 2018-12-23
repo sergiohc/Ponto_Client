@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { UsersModule } from './users/users.module';
 import { HttpModule } from '@angular/http';
 import { Angular2TokenService } from 'angular2-token';
+import { EmployeesModule } from './employees/employees.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { Angular2TokenService } from 'angular2-token';
     BrowserAnimationsModule,
     RouterModule,
     routing,
-    UsersModule
+    UsersModule,
+    EmployeesModule
+
   ],
   providers: [Angular2TokenService],
   bootstrap: [AppComponent]
