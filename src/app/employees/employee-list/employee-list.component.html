@@ -1,3 +1,50 @@
-<p>
-  employee-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col m8 offset-m2 s12">
+      <h5 class="green-text green-lighten-4">Your Employees</h5>
+      <div *ngIf="employees?.length > 0">
+        <div class="card" *ngFor="let employee of employees">
+          <div class="card-content">
+            <div class="row form">
+              <div class="col m9 s12">
+                <div class="row title-box">
+                  <div class="col m8 s12">
+                    <h5 class="name">{{ employee.name }}</h5>
+                  </div>
+                  <div class="col m4 s12">
+                    <div class="row">
+                      <div class="col m6">
+                        <a href="#" class="grey-text" (click)="deleteEmployee(employee)">
+                          <i mz-icon-mdi [icon]="'delete'" [size]="'24px'">
+                          </i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="col m3 s12 center">
+                <div class="col m12 s6">
+                  <div class="row">
+                    <a class="btn light-green center-align" routerLink="/employees/{{ employee.slug }}">Edit</a>
+                  </div>
+                </div>
+                <div class="col m12 s6">
+                  <div class="row">
+                    <a class="btn blue center-align" routerLink="/employees/{{ employee.id }}">Employees</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large waves-effect waves-lightred green lighten-2 pulse" routerLink="/employees/new">
+    <i mz-icon-mdi [icon]="'plus'" [size]="'24px'">
+    </i>
+  </a>
+</div>

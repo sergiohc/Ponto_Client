@@ -13,16 +13,16 @@ export class EmployeeService {
   }
 
 
-  createEmployees(employee_params) {
+  createEmployee(employee_params) {
     return this._tokenService.post('employees', employee_params).pipe(map(res => res.json()));
   }
 
-  updateEmployees(employee_id, employee_params) {
+  updateEmployee(employee_id, employee_params) {
     return this._tokenService.put('employees/' + employee_id, employee_params).pipe(map(res => res.json()));
   }
 
 
-  destroyEmployees(employee_id) {
+  destroyEmployee(employee_id) {
     return this._tokenService.delete('employees/' + employee_id).pipe(map(res => res.json()));
   }
 }
