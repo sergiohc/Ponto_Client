@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this._tokenService.signIn(this._signInData).subscribe(
       res => {
-        this.router.navigate(['/forms']);
+        this.router.navigate(['/employees']);
       }, error => {
         this._signInData = <SignInData>{};
         console.log(error._body);
