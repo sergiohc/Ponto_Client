@@ -23,7 +23,7 @@ export class EmployeeEmployeeComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit(f) {
-    if (this.employee.id) {
+    if (this.employee.id, this.employee) {
       this.employeeService.updateEmployee(this.employee.id, this.employee).subscribe(data => {
         this.toastService.show('Employee updated', 8000, 'green');
       }, error => {
