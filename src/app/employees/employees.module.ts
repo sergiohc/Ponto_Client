@@ -8,6 +8,8 @@ import { EmployeeNewComponent } from './employee-new/employee-new.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { routing } from './../app.routing';
 import { FormsModule } from '@angular/forms';
+import { EmployeeEmployeeComponent } from './employee-employee/employee-employee.component';
+import { ClockInOutFormComponent } from './clock-in-out-form/clock-in-out-form.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,6 @@ import { FormsModule } from '@angular/forms';
   exports: [
     EmployeeListComponent
   ],
-  declarations: [EmployeeListComponent, EmployeeNewComponent, EmployeeEditComponent]
+  declarations: [EmployeeListComponent, EmployeeNewComponent, EmployeeEditComponent, EmployeeEmployeeComponent, ClockInOutFormComponent]
 })
 export class EmployeesModule { }

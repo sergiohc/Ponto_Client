@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 
 import { Angular2TokenService } from 'angular2-token';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { EmployeeEditComponent } from './employees/employee-edit/employee-edit.component';
 
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
@@ -19,6 +20,8 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'employees', component: EmployeeListComponent, canActivate: [Angular2TokenService]},
+    { path: 'employees/new', component: EmployeeEditComponent, canActivate: [Angular2TokenService]},
+    { path: 'employees/:id', component: EmployeeEditComponent, canActivate: [Angular2TokenService]},
     { path: '**', redirectTo: 'not-found' }
 ];
 
