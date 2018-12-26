@@ -10,6 +10,7 @@ import { routing } from './../app.routing';
 import { FormsModule } from '@angular/forms';
 import { EmployeeEmployeeComponent } from './employee-employee/employee-employee.component';
 import { ClockInOutFormComponent } from './clock-in-out-form/clock-in-out-form.component';
+import { ClockInOutListComponent } from './clock-in-out-list/clock-in-out-list.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { ClockInOutFormComponent } from './clock-in-out-form/clock-in-out-form.c
   exports: [
     EmployeeListComponent
   ],
-  declarations: [EmployeeListComponent, EmployeeNewComponent, EmployeeEditComponent, EmployeeEmployeeComponent, ClockInOutFormComponent]
+  declarations: [EmployeeListComponent, EmployeeNewComponent, EmployeeEditComponent, EmployeeEmployeeComponent, ClockInOutFormComponent, ClockInOutListComponent]
 })
 export class EmployeesModule { }

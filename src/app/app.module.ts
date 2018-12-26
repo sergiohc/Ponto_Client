@@ -18,7 +18,7 @@ import { Angular2TokenService } from 'angular2-token';
 
 import { EmployeesModule } from './employees/employees.module';
 import { EmployeeService } from './shared/employee.service';
-import { CommonModule } from "@angular/common";
+import { ClockInOutService } from './shared/clock-in-out.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { CommonModule } from "@angular/common";
     routing
 
   ],
-  providers: [Angular2TokenService, EmployeeService],
+  providers: [Angular2TokenService, EmployeeService, ClockInOutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

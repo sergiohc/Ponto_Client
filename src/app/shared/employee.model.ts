@@ -1,3 +1,4 @@
+import { ClockInOut } from './clock_in_out.model';
 export class Employee {
     id: number;
     name: string;
@@ -7,6 +8,7 @@ export class Employee {
     team_id: number;
     office_id: number;
     slug: string;
+    clockInOut: ClockInOut[] = [];
 
     constructor(employeeInfo: any) {
         this.id = employeeInfo.id;
@@ -18,5 +20,12 @@ export class Employee {
         this.office_id = employeeInfo.team_id;
 
         this.slug = employeeInfo.slug;
+        this.includeclock(employeeInfo.clockInOut);
     }
+
+    private includeclock(clock: any) {
+      for (const count in clock) {
+          this.clockInOut.push( new ClockInOut(clock[count]) );
+      }
+  }
 }

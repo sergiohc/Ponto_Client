@@ -11,10 +11,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./employee-edit.component.css']
 })
 export class EmployeeEditComponent implements OnInit {
-  public employee: Employee = new Employee;
+  public employee: Employee;
 
   constructor(
-    private formService: EmployeeService,
+    private employeeService: EmployeeService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -22,7 +22,7 @@ export class EmployeeEditComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       if (params['id'] !== undefined) {
-        this.formService.getEmployee(params['id']).subscribe(data => {
+        this.employeeService.getEmployee(params['id']).subscribe(data => {
           this.employee = new Employee(data);
         });
       }
