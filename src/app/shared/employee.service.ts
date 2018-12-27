@@ -18,6 +18,7 @@ export class EmployeeService {
 
 
   createEmployee(employee_params) {
+    console.log(employee_params)
     return this._tokenService.post('employees', employee_params).pipe(map(res => res.json()));
   }
 

@@ -1,3 +1,38 @@
-<p>
-  employee-new works!
-</p>
+<div class="row">
+  <div class="col m8 offset-m2">
+    <h5 class="blue-text text-lighten-2">Novo Funcionário</h5>
+    <div class="card">
+      <div class="card-content">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+          <div class="row">
+            <div class="col m9 s12">
+              <input type="text" placeholder="Nome" name="name" [(ngModel)]="employee.name" required #title="ngModel">
+              <label for="name" [hidden]="name.valid || name.pristine" class="red-text text-lighten-2">Obrigatório</label>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col m9 s12">
+                <input type="text" placeholder="CPF" name="CPF" [(ngModel)]="employee.cpf" required #title="ngModel">
+                <label for="name" [hidden]="name.valid || name.pristine" class="red-text text-lighten-2">Obrigatório</label>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col m9 s12">
+                <input type="text" placeholder="PIS" name="PIS" [(ngModel)]="employee.pis" required #title="ngModel">
+                <label for="name" [hidden]="name.valid || name.pristine" class="red-text text-lighten-2">Obrigatório</label>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col m3 right">
+              <button [disabled]="!f.valid" class="btn" type="submit">Criar</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

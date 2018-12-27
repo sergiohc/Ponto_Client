@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class EmployeeEmployeeComponent implements OnInit {
 
   @Input() employee: Employee;
-
   constructor(
               private employeeService: EmployeeService,
               private toastService: MzToastService,

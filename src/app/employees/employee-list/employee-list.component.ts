@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeService } from '../../shared/employee.service';
 import { MzToastService } from 'ngx-materialize';
 
 import { Employee } from '../../shared/employee.model';
-
-
 
 @Component({
   selector: 'app-employee-list',
@@ -13,8 +11,9 @@ import { Employee } from '../../shared/employee.model';
 })
 export class EmployeeListComponent implements OnInit {
   private employees: Employee[] = [];
-
-  constructor(private employeeService: EmployeeService, private toastService: MzToastService) { }
+  private employee: Employee;
+  constructor(private employeeService: EmployeeService,
+     private toastService: MzToastService) { }
 
   ngOnInit() {
     this.employeeService.getEmployees().subscribe(data => this.employees = data);
@@ -33,5 +32,4 @@ export class EmployeeListComponent implements OnInit {
     }
     return false;
   }
-
 }
