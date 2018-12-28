@@ -42,11 +42,10 @@ export class DayComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       if (params['id'] !== undefined) {
-        this.clockInOutService.getClockDay(params['id']).subscribe(data => {
+        this.clockInOutService.getClockDay(params['id'], params['day']).subscribe(data => {
           this.rowData = data
         });
       }
     });
   }
-
 }

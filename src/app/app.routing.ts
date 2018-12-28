@@ -28,7 +28,6 @@ const appRoutes: Routes = [
     { path: 'employees/:id', component: EmployeeEditComponent, canActivate: [Angular2TokenService]},
     { path: 'employee/new', component: EmployeeNewComponent, canActivate: [Angular2TokenService]},
     { path: 'clock-in-out/:id', component: ClockInOutListComponent, canActivate: [Angular2TokenService]},
-
     { path: '**', redirectTo: 'not-found' }
 ];
 
