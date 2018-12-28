@@ -12,11 +12,16 @@ export class ClockInOutService {
     return this._tokenService.get('clock_in_out/' + employee_id+'?day=true').pipe(map(res => res.json()));
   }
 
+  getArquiFDA(clock_id){
+    return this._tokenService.get('clock_in_out/' + clock_id +'/import_afd').pipe(map(res => res.json()));
+  }
+
   getClock(employee_id){
     return this._tokenService.get('clock_in_out/' + employee_id).pipe(map(res => res.json()));
   }
 
   createClock(clock_params) {
+    console.log(clock_params)
     return this._tokenService.post('clock_in_out', clock_params).pipe(map(res => res.json()));
   }
 

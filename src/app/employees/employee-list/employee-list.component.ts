@@ -4,6 +4,9 @@ import { MzToastService } from 'ngx-materialize';
 
 import { Employee } from '../../shared/employee.model';
 
+import { ClockInOutService } from '../../shared/clock-in-out.service';
+import { ClockInOut } from '../../shared/clock_in_out.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -11,9 +14,14 @@ import { Employee } from '../../shared/employee.model';
 })
 export class EmployeeListComponent implements OnInit {
   private employees: Employee[] = [];
-  private employee: Employee;
+
+  private clock: ClockInOut = new ClockInOut({});
+
+
   constructor(private employeeService: EmployeeService,
-     private toastService: MzToastService) { }
+    private clockInOutService: ClockInOutService,
+    private toastService: MzToastService,
+    private router: Router) { }
 
   ngOnInit() {
     this.employeeService.getEmployees().subscribe(data => this.employees = data);
@@ -31,4 +39,19 @@ export class EmployeeListComponent implements OnInit {
     }
     return false;
   }
+
+  createClock(clock): boolean {
+    if (confirm('Deseja registrar uma nova entrada?')) {
+      this.clock.employee_id = clock.id
+      this.clockInOutService.createClock(this.clock).subscribe(data => {
+        this.router.navigate(['employees'])
+        this.toastService.show('Ponto registrado', 8000, 'green');
+      }, error => {
+        this.toastService.show('Erro ao registrar ponto ', 8000, 'red');
+      });
+    }
+    return false;
+  }
 }
+
+
