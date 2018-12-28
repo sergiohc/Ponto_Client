@@ -13,6 +13,7 @@ import { ClockInOutFormComponent } from './clock-in-out-form/clock-in-out-form.c
 import { ClockInOutListComponent } from './clock-in-out-list/clock-in-out-list.component';
 import { DayComponent } from './clock-in-out-list/day/day.component';
 import { MonthComponent } from './clock-in-out-list/month/month.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { MonthComponent } from './clock-in-out-list/month/month.component';
     BrowserAnimationsModule,
     MaterializeModule.forRoot(),
     routing,
-    FormsModule
+    FormsModule,
+    AgGridModule.withComponents([DayComponent])
   ],
   exports: [
     EmployeeListComponent

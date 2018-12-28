@@ -17,7 +17,6 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     this.employeeService.getEmployees().subscribe(data => this.employees = data);
-
   }
 
   deleteEmployee(employee): boolean {
