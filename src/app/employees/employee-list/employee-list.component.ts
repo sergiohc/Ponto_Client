@@ -21,13 +21,13 @@ export class EmployeeListComponent implements OnInit {
   }
 
   deleteEmployee(employee): boolean {
-    if (confirm('Your want delete this employee?')) {
+    if (confirm('Deseja deletar este Funcionário?')) {
       this.employeeService.destroyEmployee(employee.id).subscribe(data => {
         const index = this.employees.indexOf(employee);
         this.employees.splice(index, 1);
-        this.toastService.show('Employee deleted', 8000, 'green');
+        this.toastService.show('Funcionário deletado', 8000, 'green');
       }, error => {
-        this.toastService.show('Error in delete Employee ' + employee.name, 8000, 'red');
+        this.toastService.show('Erro ao deletar Funcionário ' + employee.name, 8000, 'red');
       });
     }
     return false;

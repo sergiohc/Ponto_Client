@@ -8,8 +8,8 @@ export class ClockInOutService {
 
   constructor(private http: Http, private _tokenService: Angular2TokenService) { }
 
-  createClock(employee_id, clock) {
-    return this._tokenService.post('clock_in_out', {employee_id: employee_id, clock}).pipe(map(res => res.json()));
+  createClock(clock_params) {
+    return this._tokenService.post('clock_in_out', clock_params).pipe(map(res => res.json()));
   }
 
   updateClock(clock_id, clock_params) {

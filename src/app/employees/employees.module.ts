@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeEmployeeComponent } from './employee-employee/employee-employee.component';
 import { ClockInOutFormComponent } from './clock-in-out-form/clock-in-out-form.component';
 import { ClockInOutListComponent } from './clock-in-out-list/clock-in-out-list.component';
+import { DayComponent } from './clock-in-out-list/day/day.component';
+import { MonthComponent } from './clock-in-out-list/month/month.component';
 
 @NgModule({
   imports: [
@@ -24,6 +26,6 @@ import { ClockInOutListComponent } from './clock-in-out-list/clock-in-out-list.c
   exports: [
     EmployeeListComponent
   ],
-  declarations: [EmployeeListComponent, EmployeeNewComponent, EmployeeEditComponent, EmployeeEmployeeComponent, ClockInOutFormComponent, ClockInOutListComponent]
+  declarations: [EmployeeListComponent, EmployeeNewComponent, EmployeeEditComponent, EmployeeEmployeeComponent, ClockInOutFormComponent, ClockInOutListComponent, DayComponent, MonthComponent]
 })
 export class EmployeesModule { }
