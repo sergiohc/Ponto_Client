@@ -8,7 +8,7 @@ export class ClockInOutService {
 
   constructor(private http: Http, private _tokenService: Angular2TokenService) { }
 
-  getClockDay(employee_id, day){
+  getClockDay(employee_id){
     return this._tokenService.get('clock_in_out/' + employee_id+'?day=true').pipe(map(res => res.json()));
   }
 
@@ -21,7 +21,6 @@ export class ClockInOutService {
   }
 
   createClock(clock_params) {
-    console.log(clock_params)
     return this._tokenService.post('clock_in_out', clock_params).pipe(map(res => res.json()));
   }
 
