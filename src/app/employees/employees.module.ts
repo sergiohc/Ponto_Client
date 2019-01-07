@@ -14,6 +14,7 @@ import { ClockInOutListComponent } from './clock-in-out-list/clock-in-out-list.c
 import { DayComponent } from './clock-in-out-list/day/day.component';
 import { MonthComponent } from './clock-in-out-list/month/month.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { AgGridModule } from 'ag-grid-angular';
     MaterializeModule.forRoot(),
     routing,
     FormsModule,
-    AgGridModule.withComponents([DayComponent])
+    AgGridModule.withComponents([DayComponent]),
+    HttpClientModule
   ],
   exports: [
     EmployeeListComponent

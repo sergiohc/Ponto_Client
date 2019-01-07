@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Angular2TokenService } from 'angular2-token';
 import { map } from "rxjs/operators";
+import { Observable } from 'rxjs';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ClockInOutService {
 
-  constructor(private http: Http, private _tokenService: Angular2TokenService) { }
+  constructor(private http: HttpClient, private _tokenService: Angular2TokenService) { }
 
   getClockDay(employee_id){
     return this._tokenService.get('clock_in_out/' + employee_id+'?day=true').pipe(map(res => res.json()));
   }
-
+  //:Observable<Blob>
   getArquiFDA(clock_id){
     return this._tokenService.get('clock_in_out/' + clock_id +'/import_afd').pipe(map(res => res.json()));
   }
-
   getClock(employee_id){
     return this._tokenService.get('clock_in_out/' + employee_id).pipe(map(res => res.json()));
   }
@@ -27,4 +28,5 @@ export class ClockInOutService {
   updateClock(clock_id, clock_params) {
     return this._tokenService.put('clock_in_out/' + clock_id, clock_params).pipe(map(res => res.json()));
   }
+
 }
