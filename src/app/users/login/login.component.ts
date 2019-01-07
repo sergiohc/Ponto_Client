@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  private _signInData: SignInData = <SignInData>{};
+  public _signInData: SignInData = <SignInData>{};
 
   ngOnInit() {
   }

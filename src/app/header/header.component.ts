@@ -10,7 +10,7 @@ import { MzToastService} from 'ngx-materialize';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _tokenService: Angular2TokenService, private toastService: MzToastService) { }
+  constructor(public _tokenService: Angular2TokenService, private toastService: MzToastService) { }
 
   ngOnInit() {
   }

@@ -13,9 +13,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  private employees: Employee[] = [];
+  public employees: Employee[] = [];
 
-  private clock: ClockInOut = new ClockInOut({});
+  public clock: ClockInOut = new ClockInOut({});
 
 
   constructor(private employeeService: EmployeeService,

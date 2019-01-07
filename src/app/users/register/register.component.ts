@@ -10,7 +10,7 @@ import { MzToastService} from 'ngx-materialize';
 })
 export class RegisterComponent implements OnInit {
 
-  private _registerData: RegisterData = <RegisterData>{};
+  public _registerData: RegisterData = <RegisterData>{};
 
   constructor(private _tokenService: Angular2TokenService, private toastService: MzToastService ) { }
 
