@@ -34,10 +34,28 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col m12 l2">
-                    <p class="description grey-text">CPF: {{ employee.cpf }} PIS: {{employee.pis}} </p>
+
+                  <div class="col s1 m6 l3 ">
+                    <b class="description grey-text">PIS:</b>
+                    <p class="description grey-text">{{ employee.pis }}</p>
                   </div>
-                </div>
+                  <div class="col s1 m6 l3">
+                    <b class="description grey-text"> CPF:</b>
+                    <p class="description grey-text">{{ employee.cpf }} </p>
+                  </div>
+
+                  </div>
+                    <div class="row">
+                      <div class="col s1 m6 l3">
+                        <b class="description grey-text">Time:</b>
+                        <p class="description grey-text"> {{ employee.team }} </p>
+                      </div>
+                      <div class="col s1 m6 l3">
+                        <b class="description grey-text">Cargo:</b>
+                        <p class="description grey-text">{{ employee.office }} </p>
+                      </div>
+                  </div>
+
               </div>
               <div class="col m3 s12 center">
                 <div class="col m12 s6">

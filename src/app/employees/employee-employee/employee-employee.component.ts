@@ -24,15 +24,16 @@ export class EmployeeEmployeeComponent implements OnInit {
   onSubmit(f) {
     if (this.employee.id, this.employee) {
       this.employeeService.updateEmployee(this.employee.id, this.employee).subscribe(data => {
-        this.toastService.show('Employee updated', 8000, 'green');
+        this.toastService.show('Funcionário alterado', 8000, 'green');
+        this.router.navigate(['/employees']);
       }, error => {
-        this.toastService.show('Problem in Form creation', 8000, 'red');
+        this.toastService.show('Problema ao editar', 8000, 'red');
       });
     } else {
       this.employeeService.createEmployee(this.employee).subscribe(data => {
         this.router.navigate(['/employees/' + data.id]);
       }, error => {
-        this.toastService.show('Problem in Form creation', 8000, 'red');
+        this.toastService.show('Problema ao criar', 8000, 'red');
       });
     }
   }

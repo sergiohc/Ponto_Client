@@ -5,8 +5,8 @@ export class Employee {
     cpf: string;
     pis: string;
     user_id: number;
-    team_id: number;
-    office_id: number;
+    team: string;
+    office: string;
     slug: string;
     clockInOut: ClockInOut[] = [];
 
@@ -16,8 +16,8 @@ export class Employee {
         this.cpf = employeeInfo.cpf;
         this.pis = employeeInfo.pis;
         this.user_id = employeeInfo.user_id;
-        this.team_id = employeeInfo.team_id;
-        this.office_id = employeeInfo.team_id;
+        this.team = employeeInfo.team;
+        this.office = employeeInfo.office;
 
         this.slug = employeeInfo.slug;
         this.includeclock(employeeInfo.clockInOut);
